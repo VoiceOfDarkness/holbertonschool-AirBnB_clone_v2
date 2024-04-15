@@ -15,7 +15,8 @@ class State(BaseModel, Base):
     __tablename__ = "states"
 
     name: Mapped[str] = mapped_column(String(128), nullable=False)
-    cities: Mapped["City"] = relationship("City", backref="state", cascade="delete")
+    cities: Mapped["City"] = relationship("City", backref="state",
+                                          cascade="delete")
 
     if os.getenv("HBNB_TYPE_STORAGE") != "db":
 
@@ -23,7 +24,7 @@ class State(BaseModel, Base):
         def cities(self):
             """Get a list of all related City objects."""
             from models import storage
-            
+
             city_list = []
             for city in list(storage.all(City).values()):
                 if city.state_id == self.id:
