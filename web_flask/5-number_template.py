@@ -7,7 +7,7 @@ This module defines a Flask application that serves a
 from flask import Flask
 from flask.templating import render_template
 
-app = Flask("__name__")
+app = Flask("__name__", template_folder="web_flask/templates")
 
 
 @app.route("/", strict_slashes=False)
