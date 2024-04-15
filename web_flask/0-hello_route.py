@@ -1,11 +1,19 @@
 #!/usr/bin/python3
-from flask import Flask
+"""
+This module defines a Flask application that serves a
+"Hello HBNB!" message.
+"""
 
+from flask import Flask
 
 app = Flask("__name__")
 
+
 @app.route("/", strict_slashes=False)
 def hello():
+    """
+    Returns a "Hello HBNB!" message when the root URL is accessed.
+    """
     return "Hello HBNB!"
 
 
