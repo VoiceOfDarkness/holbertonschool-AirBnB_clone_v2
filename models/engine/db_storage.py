@@ -111,3 +111,4 @@ class DBStorage:
         Closes the current database session.
         """
         self.__session.close()
+        return self.__session
