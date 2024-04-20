@@ -8,6 +8,7 @@
 }
 
 .locations {
+  position: relative;
   display: inline;
   vertical-align: middle;
   float: left;
@@ -19,6 +20,7 @@
 }
 
 .filter_amenities {
+  position: relative;
   display: inline;
   vertical-align: middle;
   height: 100%;
@@ -31,8 +33,9 @@
 .popover {
   list-style-type: none;
   display: none;
+  position: absolute;
   background-color: #fafafa;
-  width: 100%;
+  width: auto;
   overflow-y: auto;
   max-height: 300px;
 
@@ -42,14 +45,16 @@
 
   border: 1px solid #dddddd;
   border-radius: 4px;
+
+  z-index: 1;
 }
 
 .locations:hover .popover {
-  display: inline-block;
+  display: block;
 }
 
 .filter_amenities:hover .popover {
-  display: inline-block;
+  display: block;
 }
 
 ul {
