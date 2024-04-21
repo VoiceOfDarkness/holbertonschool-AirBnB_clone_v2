@@ -16,7 +16,7 @@ class State(BaseModel, Base):
 
     name: Mapped[str] = mapped_column(String(128), nullable=False)
     cities: Mapped[list["City"]] = relationship("City", backref="state",
-                                          cascade="delete")
+                                                cascade="delete")
 
     if os.getenv("HBNB_TYPE_STORAGE") != "db":
 
